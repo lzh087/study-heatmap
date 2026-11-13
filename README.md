@@ -4,6 +4,7 @@
 >
 > An IntelliJ IDEA plugin that tracks how long each line of code stayed on your screen, then renders it as a per-line heatmap.
 
+[![release](https://img.shields.io/github/v/release/lzh087/study-heatmap)](https://github.com/lzh087/study-heatmap/releases/latest)
 [![build](https://github.com/lzh087/study-heatmap/actions/workflows/build.yml/badge.svg)](https://github.com/lzh087/study-heatmap/actions/workflows/build.yml)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -30,11 +31,10 @@
 
 ### 方式一：下载构建好的插件
 
-本仓库的 GitHub Actions 每次 push 都会构建插件：
+到 [Releases](https://github.com/lzh087/study-heatmap/releases/latest) 下载 `study-heatmap-0.1.0.zip`，
+然后 `Settings → Plugins → ⚙ → Install Plugin from Disk` 选中它，重启 IDE。
 
-`Actions → build → 最新一次运行 → Artifacts → study-heatmap-plugin`
-
-也可以在本地构建（见下）。
+也可以从 `Actions → build → Artifacts` 取最新一次构建的产物（保留 90 天），或按下面的步骤自己编译。
 
 ### 方式二：从源码构建
 
