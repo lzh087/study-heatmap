@@ -1,0 +1,35 @@
+<idea-plugin>
+    <id>com.study.heatmap</id>
+    <name>Study Heatmap</name>
+    <vendor>local</vendor>
+
+    <description><![CDATA[
+        统计你在代码上真实停留了多久，并在退出项目时生成一份按行染色的热力图。<br/>
+        <ul>
+            <li>屏幕上可见的每一行代码，每秒各记 1 秒</li>
+            <li>滚动、窗口失焦、键鼠（含触控板）10 分钟无操作都不计入，离开的部分会回退</li>
+            <li>关闭项目时弹窗选择「保留，下次继续」或「结算并生成报告」</li>
+            <li>报告输出到项目下的 <code>study-report/</code>，与源码目录 1:1 对应的 HTML 镜像</li>
+        </ul>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="com.study.heatmap.tracker.ActivityMonitor"/>
+        <projectService serviceImplementation="com.study.heatmap.tracker.StudyTrackerService"/>
+        <postStartupActivity implementation="com.study.heatmap.tracker.StudyStartupActivity"/>
+        <statusBarWidgetFactory id="StudyHeatmapStatus"
+                                implementation="com.study.heatmap.ui.StudyStatusBarWidgetFactory"/>
+        <notificationGroup id="StudyHeatmap" displayType="BALLOON"/>
+    </extensions>
+
+    <actions>
+        <action id="StudyHeatmap.GenerateReport"
+                class="com.study.heatmap.actions.GenerateReportAction"
+                text="生成学习热力图"
+                description="结算当前学习数据，在项目下生成 study-report/">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>

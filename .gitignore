@@ -1,0 +1,24 @@
+# 构建产物
+build/
+out/
+.gradle/
+.intellijPlatform/
+*.zip
+
+# IDE
+.idea/
+*.iml
+
+# 本机私有数据
+.workbuddy/
+local.properties
+*.log
+*.hprof
+
+# 生成的报告（不纳入版本管理）
+study-report/
+demo-report/
+
+# 系统
+.DS_Store
+Thumbs.db

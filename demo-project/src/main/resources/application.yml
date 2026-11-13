@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: demo-order
+  datasource:
+    url: jdbc:mysql://localhost:3306/orders
+    username: demo
+    password: demo
+
+order:
+  free-shipping-threshold: 199
+  shipping-fee: 12
+  payment:
+    timeout-ms: 3000
