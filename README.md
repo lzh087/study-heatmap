@@ -4,6 +4,9 @@
 >
 > An IntelliJ IDEA plugin that tracks how long each line of code stayed on your screen, then renders it as a per-line heatmap.
 
+[![build](https://github.com/lzh087/study-heatmap/actions/workflows/build.yml/badge.svg)](https://github.com/lzh087/study-heatmap/actions/workflows/build.yml)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 ![总览](docs/screenshot-overview.png)
 
 ## 它解决什么问题
@@ -38,7 +41,7 @@
 需要 **JDK 21+**（IntelliJ Platform 2025.2 的要求）。仓库自带 Gradle wrapper，不用另装 Gradle。
 
 ```bash
-git clone https://github.com/<your-name>/study-heatmap.git
+git clone https://github.com/lzh087/study-heatmap.git
 cd study-heatmap
 ./gradlew buildPlugin
 ```
